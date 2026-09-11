@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts — no external network dependency at runtime */
+@import "@fontsource/cinzel/500.css";
+@import "@fontsource/cinzel/600.css";
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500-italic.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+
+:root {
+  /* Marble & Gold Classical palette */
+  --marble: #f5f0e6;
+  --marble-deep: #ede4d0;
+  --marble-vein: #d9cbab;
+  --ink: #211d17;
+  --ink-soft: #52493a;
+  --gold: #a97c2f;
+  --gold-bright: #c99a3f;
+  --gold-pale: #e8d9b5;
+  --bronze: #8a3b2e;
+  --bronze-soft: #f1ddd6;
+  --verdigris: #4f6b58;
+  --verdigris-soft: #dfe8e0;
+}
+
+@theme inline {
+  --color-marble: var(--marble);
+  --color-marble-deep: var(--marble-deep);
+  --color-marble-vein: var(--marble-vein);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-pale: var(--gold-pale);
+  --color-bronze: var(--bronze);
+  --color-bronze-soft: var(--bronze-soft);
+  --color-verdigris: var(--verdigris);
+  --color-verdigris-soft: var(--verdigris-soft);
+
+  --font-display: "Cinzel", serif;
+  --font-serif: "Fraunces", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--marble);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.marble-surface {
+  position: relative;
+  background-color: var(--marble);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 15% 10%, rgba(217, 203, 171, 0.35), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 25%, rgba(169, 124, 47, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 50% 90%, rgba(217, 203, 171, 0.28), transparent 60%),
+    linear-gradient(135deg, rgba(33,29,23,0.02) 0%, transparent 40%);
+}
+
+.marble-surface-deep {
+  background-color: var(--marble-deep);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(169, 124, 47, 0.10), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 80%, rgba(217, 203, 171, 0.4), transparent 60%);
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
