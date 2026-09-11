@@ -1,28 +1,51 @@
-# CartSentry
+# 🛒 CartSentry
 
-### AI-Powered Abandoned Cart Recovery Agent
+### Autonomous AI Agent for Abandoned-Cart Recovery
 
-CartSentry is an autonomous abandoned-cart recovery system that uses an AI decision agent to determine the best recovery action for each abandoned cart.
+> **AI proposes. Deterministic code protects.**
 
-For every cart, the system evaluates whether to:
+CartSentry is an AI-powered abandoned-cart recovery system designed to make autonomous recovery decisions for customers who leave items in their shopping cart without completing a purchase.
 
-- Send a reminder
-- Offer a discount
-- Take no action
+Instead of relying entirely on static business rules or allowing an LLM to make unrestricted commercial decisions, CartSentry combines **AI-based reasoning** with a **deterministic guardrail layer**.
 
-The AI does **not** have final authority over the customer-facing decision. Its proposal is passed through a deterministic guardrail layer that enforces hard business constraints before a final action is accepted.
-
-The core pipeline is:
+For every abandoned cart, the system follows:
 
 ```text
-Cart Data
-    ↓
-AI Decision Agent
-    ↓
-Proposed Action
-    ↓
-Deterministic Guardrails
-    ↓
-Final Action
-    ↓
-Audit / Decision Log
+┌───────────────────────┐
+│      Cart Data        │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│    AI Decision Agent  │
+│                       │
+│ Analyze customer/cart │
+│ context               │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│   AI Proposed Action  │
+│                       │
+│ Reminder / Discount / │
+│ No Action             │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│ Deterministic         │
+│ Guardrail Engine      │
+│                       │
+│ Validate business     │
+│ constraints           │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│     Final Action      │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│     Audit / Logs      │
+└───────────────────────┘
