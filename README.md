@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # CartSentry — Web Edition (v2)
 
 An autonomous cart-recovery agent with a live dashboard. An AI advisor uses Google's Antigravity managed agent through the Gemini Interactions API to propose an
