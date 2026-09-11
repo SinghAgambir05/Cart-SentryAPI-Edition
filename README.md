@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CartSentry — Web Edition (v2)
 
 An autonomous cart-recovery agent with a live dashboard. An AI advisor uses Google's Antigravity managed agent through the Gemini Interactions API to propose an
@@ -83,3 +84,7 @@ Antigravity is previewed through the Gemini Interactions API. The integration in
   parser and API validation were tested directly with both valid and
   malformed rows — but look it over yourself with `npm run dev` before you
   rely on it for the video.
+=======
+# Cart-SentryAPI-Edition
+CartSentry is an AI-powered abandoned-cart recovery agent that analyzes customer carts and recommends reminders, discounts, or no action. AI proposals are evaluated by deterministic guardrails, including a ₹300 discount cap, before execution. Built with Next.js, TypeScript, Gemini/Antigravity, and audit logging for transparent, reliable decisions.
+>>>>>>> 94a6f6a2adf8ac30ab0176f3c5d7db39e1867e82
